@@ -3,22 +3,20 @@ package main;
 import java.util.Random;
 
 public class HiloCoche extends Thread{
-	private int id;
+	private String id;
 	private int vueltas = 0;
+	private boolean finish = false;
 	
 
-	public HiloCoche(int id) {
+	public HiloCoche(String id) {
 		this.id = id;
 	}
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
-	
+
+
 	public void run() {
 		try {
 			while(vueltas<10) {
@@ -26,6 +24,8 @@ public class HiloCoche extends Thread{
 				Thread.sleep(espera);
 				vueltas++;
 			}
+			finish = true;
+			
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
