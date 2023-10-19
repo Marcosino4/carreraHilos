@@ -29,4 +29,11 @@ public class Podio {
 		podio.set(podio.indexOf(coche), coche);
 	}
 	
+	public synchronized void imprimirPodio() {
+		for (int i = 0; i < podio.size(); i++) {
+			System.out.println(
+					(i + 1) + " " + podio.get(i).getIde() + " " + podio.get(i).getVueltasTotales());
+			}
+		System.out.println("\n");
+	}
 }
