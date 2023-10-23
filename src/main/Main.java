@@ -9,7 +9,6 @@ public class Main {
 		int nCoches = 9;
 		ArrayList<HiloCoche> listaCoches = new ArrayList();
 		Podio podio = new Podio(new ArrayList<>());
-		boolean exit = false;
 		for (int i = 0; i <= nCoches; i++) {
 			listaCoches.add(new HiloCoche("c" + (i + 1), podio));
 			listaCoches.get(i).start();
