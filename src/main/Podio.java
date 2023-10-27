@@ -30,10 +30,25 @@ public class Podio {
 	}
 	
 	public synchronized void imprimirPodio() {
+		System.out.println("Position |  Car  | Laps");
+		System.out.println("-----------------------");
 		for (int i = 0; i < podio.size(); i++) {
-			System.out.println(
-					(i + 1) + " " + podio.get(i).getIde() + " " + podio.get(i).getVueltasTotales());
+			if(i<9) {
+				if(podio.get(i).getIde().length() > 2) {
+					System.out.println((i + 1) + "        |  " + podio.get(i).getIde() + "  | " + podio.get(i).getVueltasTotales());
+				}else {
+					System.out.println((i + 1) + "        |  " + podio.get(i).getIde() + "   | " + podio.get(i).getVueltasTotales());
+				}
+			}else if(i>=9) {
+				if(podio.get(i).getIde().length() > 2) {
+					System.out.println((i + 1) + "       |  " + podio.get(i).getIde() + "  | " + podio.get(i).getVueltasTotales());
+
+				}else {
+					System.out.println((i + 1) + "       |  " + podio.get(i).getIde() + "   | " + podio.get(i).getVueltasTotales());
+				}
 			}
+			}
+			
 		System.out.println("\n");
 	}
 }
